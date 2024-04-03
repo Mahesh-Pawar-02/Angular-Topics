@@ -1,0 +1,35 @@
+<h1>
+    Pipes for String
+  </h1>
+  <h2>{{name}}</h2>
+  <h2>{{name | lowercase}}</h2>
+  <h2>{{name | uppercase}}</h2>
+  <h2>{{name | titlecase}}</h2>
+  <h2>{{name | slice:10}}</h2>
+  
+  <h1>
+    Pipes for JSON output
+  </h1>
+  <h2>{{Institute | json}}</h2>
+  
+  <h1>
+    Pipes for Numbers
+  </h1>
+  <h2>{{no | number : '1.2-3'}}</h2>
+  <h2>{{no | number : '3.2-5'}}</h2>
+  <h2>{{no | number : '3.4-5'}}</h2>
+  
+  <h1>
+    Pipes for Currency
+  </h1>
+  <h2>{{0.78 | percent}}</h2>
+  <h2>{{78 | currency}}</h2>
+  <h2>{{78 | currency: 'INR'}}</h2>
+  
+  <h1>
+    Pipes for Date
+  </h1>
+  <h2>{{today}}</h2>
+  <h2>{{today | date:'short'}}</h2>
+  <h2>{{today | date: 'shortDate' }}</h2>
+  <h2>{{today | date: 'shortTime' }}</h2>

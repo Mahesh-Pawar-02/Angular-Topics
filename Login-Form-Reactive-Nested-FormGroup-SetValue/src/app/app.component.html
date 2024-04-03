@@ -1,0 +1,38 @@
+<div class = "container-fluid">
+  <h2>Marvellous Login Form</h2>
+<!--Add FormGroup woth our model-->
+  <form [formGroup] = "MarvellousForm">
+  <div class="form-group">
+    <label>User Name </label>
+    <input type="text" class="form-control" formControlName="username">
+  </div>
+  
+  <div class="form-group">
+    <label>Password </label>
+    <input type="password" class="form-control" formControlName="passowrd">
+  </div>
+  
+  <div class="form-group">
+    <label>Confirm Password </label>
+    <input type="password" class="form-control" formControlName="ConfirmPass">
+  </div>
+
+  <!--Add nested Form group-->
+  <div formGroupName = "MarvellousClass">
+    <div class = "form-group">
+      <label>Batch Name</label>
+      <input type="text" class = "form-control" formControlName="batch">
+    </div>
+
+    <div class = "form-group">
+      <label>Fees</label>
+      <input type="text" class = "form-control" formControlName="fees">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Login</button>
+  <button type="button" class="btn btn-primary ml-3" (click)="SetData()">Set Values</button>
+</form>
+
+{{MarvellousForm.value | json}}
+</div>

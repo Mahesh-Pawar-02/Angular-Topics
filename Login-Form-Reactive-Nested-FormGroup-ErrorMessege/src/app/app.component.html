@@ -1,0 +1,41 @@
+<div class = "container-fluid">
+  <h2>Marvellous Login Form</h2>
+<!--Add FormGroup woth our model-->
+  <form [formGroup] = "MarvellousForm">
+  <div class="form-group">
+    <label>User Name </label>
+    <!--Use class binding for validation-->
+    <input [class.is-invalid] = "MarvellousForm.get('username')?.invalid" type="text" class="form-control" formControlName="username">
+    <small [class.d-none]="MarvellousForm.get('username')?.valid" class="text-danger">Username is required</small>
+  </div>
+  
+  <div class="form-group">
+    <label>Password </label>
+    <input [class.is-invalid] = "MarvellousForm.get('passowrd')?.invalid && MarvellousForm.get('passowrd')?.touched" type="password" class="form-control" formControlName="passowrd">
+    <small [class.d-none]="MarvellousForm.get('passowrd')?.valid || MarvellousForm.get('passowrd')?.untouched" class="text-danger">Password is required</small>
+  </div>
+  
+  <div class="form-group">
+    <label>Confirm Password </label>
+    <input type="password" class="form-control" formControlName="ConfirmPass">
+  </div>
+
+  <!--Add nested Form group-->
+  <div formGroupName = "MarvellousClass">
+    <div class = "form-group">
+      <label>Batch Name</label>
+      <input type="text" class = "form-control" formControlName="batch">
+    </div>
+
+    <div class = "form-group">
+      <label>Fees</label>
+      <input type="text" class = "form-control" formControlName="fees">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Login</button>
+  <button type="button" class="btn btn-primary ml-3" (click)="SetData()">Set Values</button>
+</form>
+
+{{MarvellousForm.value | json}}
+</div>
